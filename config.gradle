@@ -1,0 +1,131 @@
+ext {
+
+
+    android = [
+            compileSdkVersion: 25,
+            buildToolsVersion: "25.0.2",
+            applicationId    : "com.ronin.kiwi",
+            minSdkVersion    : 16,
+            targetSdkVersion : 25,
+            versionCode      : 1,
+            versionName      : "1.0.0",
+    ]
+
+    /*
+     * 引用库版本号
+     */
+
+    appcompat_v7Version = "25.1.0"
+    constraintVersion = "constraint-layout:1.0.0-beta4"
+
+    rxjavaVersion = "1.1.6"
+    rxandroidVersion = "1.1.0"
+    viselogVersion = "viselog:1.0.0"
+    draggerVersion = "2.0"
+    bannerVersion = "1.4.8"
+    toprightmenuVersion = "1.0"
+    butterknifeVersion = "7.0.1"
+    retrofitVersion = "2.0.0-beta4"
+    gsonVersion = "2.6.2"
+    glideVersion = "3.7.0"
+    photoviewVersion = "1.4.1"
+    appintroVersion = "4.1.0"
+    okhttputilsVersion = "2.6.2"
+    bmob_sdkVersion = "3.5.3"
+    umengAnalyticsVersion = "latest.integration"
+    bottomBarVersion = "2.0.2"
+    leakcannaryVersion = "1.5"
+    /**
+     * recyclerview
+     */
+    easyrecyclerviewVersion = "4.3.6"
+    xrecyclerviewVersion = "1.3.2"
+    recyclerviewAnimVersion = "2.2.5"
+
+    eventbusVersion = "3.0.0"
+    jcvideoplayerVersion = "5.5"
+
+    dependencies = [
+
+            /**
+             * android自带支持库
+             */
+            appcompat_v7            : "com.android.support:appcompat-v7:${appcompat_v7Version}",
+            cardview_v7             : "com.android.support:cardview-v7:${appcompat_v7Version}",
+            design                  : "com.android.support:design:${appcompat_v7Version}",
+            recyclerview_v7         : "com.android.support:recyclerview-v7:${appcompat_v7Version}",
+            constraint              : "com.android.support.constraint:${constraintVersion}",
+
+            /**
+             * 内存泄漏检测
+             */
+            leakcanary_android      : "com.squareup.leakcanary:leakcanary-android:${leakcannaryVersion}",
+            leakcanary_android_no_op: "com.squareup.leakcanary:leakcanary-android-no-op:${leakcannaryVersion}",
+
+            /*
+             * 日志
+             */
+            viselog                 : "com.vise.xiaoyaoyou:${viselogVersion}",
+            /*
+             *注解框架
+             */
+            butterknife             : "com.jakewharton:butterknife:${butterknifeVersion}",
+            dragger2apt             : "com.google.dagger:dagger-compiler:${draggerVersion}",
+            dragger2                : "com.google.dagger:dagger:${draggerVersion}",
+            /*
+             * http网络请求
+             */
+            rxjava                  : "io.reactivex:rxjava:${rxjavaVersion}",
+            rxandroid               : "io.reactivex:rxandroid:${rxandroidVersion}",
+            retrofit                : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            converter_gson          : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            adapter_rxjava          : "com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}",
+
+            //include okhttp3,okio,fastjson1.1.46
+            okhttputils             : "com.zhy:okhttputils:${okhttputilsVersion}",
+            /*
+             * json解析
+             */
+            gson                    : "com.jakewharton:butterknife:${gsonVersion}",
+            /*
+             * 图片加载
+             */
+            glide                   : "com.github.bumptech.glide:glide:${glideVersion}",
+
+            /*
+             * view
+             */
+            photoview               : "com.bm.photoview:library:${photoviewVersion}",
+            appintro                : "com.github.paolorotolo:appintro:${appintroVersion}",
+            banner                  : "com.youth.banner:banner:${bannerVersion}",
+            toprightmenu            : "com.zaaach:toprightmenu:${toprightmenuVersion}",
+            bottom_bar              : "com.roughike:bottom-bar:${bottomBarVersion}",
+            easyrecyclerview        : "com.jude:easyrecyclerview:${easyrecyclerviewVersion}",
+            xrecyclerview           : "com.jcodecraeer:xrecyclerview:${xrecyclerviewVersion}",
+            recyclerviewAnim        : "jp.wasabeef:recyclerview-animators:${recyclerviewAnimVersion}",
+
+            /**
+             * 事件总线
+             */
+            eventbus                : "org.greenrobot:eventbus:${eventbusVersion}",
+            /**
+             * 视频播放
+             */
+            jcvideoplayer           : "fm.jiecao:jiecaovideoplayer:${jcvideoplayerVersion}",
+
+            /*
+             *  第三方sdk
+             */
+            /**
+             * bmob后台数据服务
+             */
+
+            bmob_sdk                : "cn.bmob.android:bmob-sdk:${bmob_sdkVersion}",
+            /**
+             * umeng统计分析
+             */
+            umengAnalytics          : "com.umeng.analytics:analytics:${umengAnalyticsVersion}",
+
+    ]
+
+}
