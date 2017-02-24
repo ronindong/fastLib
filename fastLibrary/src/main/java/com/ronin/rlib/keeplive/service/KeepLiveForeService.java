@@ -1,8 +1,9 @@
-package com.ronin.rlib.keeplive;
+package com.ronin.rlib.keeplive.service;
 
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Handler;
@@ -15,7 +16,7 @@ import com.ronin.rlib.R;
  * Created by ronindong on 2017/2/23.
  */
 
-public class KeepLiveForeService extends Service {
+public class KeepLiveForeService extends Service implements IKeepLiveListener {
     public static final int NOTIFICATION_ID = 0x11;
 
     public KeepLiveForeService() {
@@ -24,6 +25,11 @@ public class KeepLiveForeService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        return START_REDELIVER_INTENT;
     }
 
     @Override
@@ -41,6 +47,12 @@ public class KeepLiveForeService extends Service {
         }
     }
 
+    @Override
+    public void startKeepLiveService(Context cx) {
+        Intent intent = new Intent(cx, KeepLiveForeService.class);
+        cx.startService(intent);
+    }
+
     /**
      *
      */
@@ -48,6 +60,11 @@ public class KeepLiveForeService extends Service {
         @Override
         public IBinder onBind(Intent intent) {
             return null;
+        }
+
+        @Override
+        public int onStartCommand(Intent intent, int flags, int startId) {
+            return START_REDELIVER_INTENT;
         }
 
         @Override

@@ -2,15 +2,32 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ronin.rlib">
 
-    <application
-        android:supportsRtl="true">
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-        <activity android:name=".keeplive.KeepLiveActivity"
-            android:theme="@style/KeepLiveStyle"/>
+    <application android:supportsRtl="true">
 
-        <service android:name=".keeplive.KeepLiveService"
-            android:process=":KLService"/>
+        <activity
+            android:name=".keeplive.helper.KeepLiveActivity"
+            android:theme="@style/KeepLiveStyle" />
 
+        <service
+            android:name=".keeplive.service.KeepLiveService"
+            android:process=":klService" />
+
+        <service android:name=".keeplive.service.KeepLiveForeService" />
+
+        <service
+            android:name=".keeplive.service.KeepLiveJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:process=":jobSerice" />
+
+        <service
+            android:name=".keeplive.service.KeepLiveNotificationService"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

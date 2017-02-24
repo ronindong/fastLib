@@ -18,7 +18,7 @@ ext {
     appcompat_v7Version = "25.1.0"
     constraintVersion = "constraint-layout:1.0.0-beta4"
 
-    rxjavaVersion = "1.1.6"
+    rxjavaVersion = "1.1.0"
     rxandroidVersion = "1.1.0"
     viselogVersion = "viselog:1.0.0"
     draggerVersion = "2.0"

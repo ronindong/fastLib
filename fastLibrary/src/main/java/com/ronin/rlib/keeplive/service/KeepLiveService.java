@@ -1,4 +1,4 @@
-package com.ronin.rlib.keeplive;
+package com.ronin.rlib.keeplive.service;
 
 import android.app.Service;
 import android.content.Context;
@@ -6,20 +6,14 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
+import com.ronin.rlib.keeplive.helper.ScreenBroadcastListener;
+import com.ronin.rlib.keeplive.helper.ScreenManager;
+
 /**
  * Created by ronindong on 2017/2/23.
  */
 
-public class KeepLiveService extends Service {
-
-    /**
-     * 程序启动时，开启保活服务KeepLiveService
-     * @param cx
-     */
-    public static void startLiveService(Context cx) {
-        Intent intent = new Intent(cx, KeepLiveService.class);
-        cx.startService(intent);
-    }
+public class KeepLiveService extends Service implements IKeepLiveListener {
 
     @Nullable
     @Override
@@ -47,4 +41,12 @@ public class KeepLiveService extends Service {
         return START_REDELIVER_INTENT;
     }
 
+    /**
+     * 程序启动时，开启保活服务KeepLiveService
+     */
+    @Override
+    public void startKeepLiveService(Context cx) {
+        Intent intent = new Intent(cx, KeepLiveService.class);
+        cx.startService(intent);
+    }
 }

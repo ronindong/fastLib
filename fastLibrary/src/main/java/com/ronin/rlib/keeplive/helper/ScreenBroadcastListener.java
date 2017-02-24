@@ -1,4 +1,4 @@
-package com.ronin.rlib.keeplive;
+package com.ronin.rlib.keeplive.helper;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

@@ -1,13 +1,14 @@
-package com.ronin.rlib.keeplive;
+package com.ronin.rlib.keeplive.helper;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.vise.log.ViseLog;
 
 /**
  * 保活actvity
@@ -37,7 +38,7 @@ public class KeepLiveActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(TAG, "onCreate");
+        ViseLog.d("KeepLiveActivity-->onCreate");
 
         Window window = getWindow();
         //放在左上角
@@ -57,7 +58,7 @@ public class KeepLiveActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d(TAG, "onDestroy");
+        ViseLog.d("KeepLiveActivity-->onDestroy");
     }
 
 }

@@ -45,6 +45,16 @@ android {
 
         }
     }
+    /*可以解决jar包冲突*/
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'LICENSE.txt'
+    }
+
 }
 def dependency = rootProject.ext.dependencies;
 
